@@ -1,0 +1,84 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXFileReference section */
+		A6FE038918995D7000D97779 /* Headers */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Headers; path = .XcodeSupport/Headers; sourceTree = "<group>"; };
+		A6FE038B18995D8B00D97779 /* TinyMCEView.j */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.objj; path = TinyMCEView.j; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		E164FE29172185F500263CE3 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resources; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		A6FE038A18995D7E00D97779 /* Cappoccino Source */ = {
+			isa = PBXGroup;
+			children = (
+				A6FE038B18995D8B00D97779 /* TinyMCEView.j */,
+			);
+			name = "Cappoccino Source";
+			sourceTree = "<group>";
+		};
+		E164FE221721857400263CE3 = {
+			isa = PBXGroup;
+			children = (
+				A6FE038A18995D7E00D97779 /* Cappoccino Source */,
+				A6FE038918995D7000D97779 /* Headers */,
+				E164FE29172185F500263CE3 /* Resources */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXProject section */
+		E164FE231721857400263CE3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+			};
+			buildConfigurationList = E164FE261721857400263CE3 /* Build configuration list for PBXProject "TinyMCEView.framework" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E164FE221721857400263CE3;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		E164FE271721857400263CE3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		E164FE281721857400263CE3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E164FE261721857400263CE3 /* Build configuration list for PBXProject "TinyMCEView.framework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E164FE271721857400263CE3 /* Debug */,
+				E164FE281721857400263CE3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E164FE231721857400263CE3 /* Project object */;
+}
