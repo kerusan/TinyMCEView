@@ -7,11 +7,20 @@
 	objects = {
 
 /* Begin PBXFileReference section */
+		A611103918E0B087007A6CF1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		A6FE038B18995D8B00D97779 /* TinyMCEView.j */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.objj; path = TinyMCEView.j; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		E164FE29172185F500263CE3 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resources; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
+		A611103818E0B074007A6CF1 /* Doc */ = {
+			isa = PBXGroup;
+			children = (
+				A611103918E0B087007A6CF1 /* README.md */,
+			);
+			name = Doc;
+			sourceTree = "<group>";
+		};
 		A6FE038A18995D7E00D97779 /* Cappoccino Source */ = {
 			isa = PBXGroup;
 			children = (
@@ -23,6 +32,7 @@
 		E164FE221721857400263CE3 = {
 			isa = PBXGroup;
 			children = (
+				A611103818E0B074007A6CF1 /* Doc */,
 				A6FE038A18995D7E00D97779 /* Cappoccino Source */,
 				E164FE29172185F500263CE3 /* Resources */,
 			);
