@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		A6FE038918995D7000D97779 /* Headers */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Headers; path = .XcodeSupport/Headers; sourceTree = "<group>"; };
 		A6FE038B18995D8B00D97779 /* TinyMCEView.j */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.objj; path = TinyMCEView.j; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		E164FE29172185F500263CE3 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resources; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -25,7 +24,6 @@
 			isa = PBXGroup;
 			children = (
 				A6FE038A18995D7E00D97779 /* Cappoccino Source */,
-				A6FE038918995D7000D97779 /* Headers */,
 				E164FE29172185F500263CE3 /* Resources */,
 			);
 			sourceTree = "<group>";
