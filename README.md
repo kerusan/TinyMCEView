@@ -15,4 +15,11 @@ Since TinyMCE is LGPL 2.1 I assume this code can have another license and theref
 
 ## Known bugs
 
-There is right now an issue that makes the mouseclick in the TinyMCE menu passes through to the underlying Cappuccino views if a menu is outside the editor frame. This will be looked into. TinyMCE dialogs had this issue too before, but this is handled now in the TinyMCEView code.
+There is right now an issue that makes the mouseclick in the TinyMCE menu pass through to the underlying Cappuccino views if a menu is outside the editor frame. This will be looked into. TinyMCE dialogs had this issue too before, but this is handled now in the TinyMCEView code.
+
+## Todo
+
+There is lots of room for improvments and fixes. It would be nice to have bindings working and also some theme more like Aristo2. Configuration may also be easier to do with no subclassing. Please give feedback on how you are using the view.
+
+
+Kerusan
