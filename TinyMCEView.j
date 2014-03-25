@@ -3,7 +3,6 @@
  *  TinyMCEView
  *
  *  Created by Kjell Nilsson, Oops ab on 2014-01-17.
- *  Copyright (c) 2014 Oops Ab. All rights reserved.
  */
 
 @import <Foundation/Foundation.j>
