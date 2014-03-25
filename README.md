@@ -10,7 +10,7 @@ The setup, if default configuration does not fit, is now done in a method called
 
 ## License
 
-Since TinyMCE is LGPL 2.1 I assume this code can have another license and therefore the MIT license is used for the code in the TinyMCEView class. So use this project as you like but please link to this projekt if you do. It would also be nice if you tell me if you use it just to get some feedback.
+Since TinyMCE is LGPL 2.1 I assume this code can have another license and therefore the MIT license is used for the code in the TinyMCEView class. So use this project as you like but please link to this project if you do. It would also be nice if you tell me if you use it just to get some feedback.
 
 
 ## Known bugs
