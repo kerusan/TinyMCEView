@@ -8,10 +8,13 @@ This Cappuccino control tries to implement as many of the TinyMCE features as po
 
 The setup, if default configuration does not fit, is now done in a method called editorConfigurationWithElement:. Subclass TinyMCEView and overide this method for a different configuration.
 
+## Version
+
+Right now the TinyMCE 4.0.19 is supplied in both min and full versions. I will try to upgrade to latest later. There will come a CHANGELOG too. Current version is 0.5 of the framework, have to start somewhere.
+
 ## License
 
 Since TinyMCE is LGPL 2.1 I assume this code can have another license and therefore the MIT license is used for the code in the TinyMCEView class. So use this project as you like but please link to this project if you do. It would also be nice if you tell me if you use it just to get some feedback.
-
 
 ## Known bugs
 
@@ -19,7 +22,6 @@ There is right now an issue that makes the mouseclick in the TinyMCE menu pass t
 
 ## Todo
 
-There is lots of room for improvments and fixes. It would be nice to have bindings working and also some theme more like Aristo2. Configuration may also be easier to do with no subclassing. Please give feedback on how you are using the view.
-
+There is lots of room for improvments and fixes. It would be nice to have bindings working and also some theme improvments more like Aristo2. Configuration may also be easier to do with no subclassing. Please give feedback on how you are using the view.
 
 Kerusan
