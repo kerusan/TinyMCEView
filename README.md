@@ -1,6 +1,6 @@
 #TinyMCEView framework
 
-A framework for Cappuccino that encapsulates the javascript HTML editor TinyMCE. It is right now a quick hack just to get it working but I hope it can evolve further on.
+A framework for [Cappuccino](http://cappuccino-project.org) that encapsulates the javascript HTML editor TinyMCE. It is right now a quick hack just to get it working but I hope it can evolve further on. It is a HTML editor and should not be thought of as a replacement to either CPTextView or any other multiline textview even if it can be used as such. I have earlier used and still do use [WKTextField](https://github.com/wireload/WKTextView) for some things, but the TinyMCE editor is a more complete HTML editor than Google's Closure Lib editor. And I needed the extra features TinyMCE bring and did not have time to implement them myself in that lib.
 
 ## Features
 
@@ -20,8 +20,14 @@ Since TinyMCE is LGPL 2.1 I assume this code can have another license and theref
 
 There is right now an issue that makes the mouseclick in the TinyMCE menu pass through to the underlying Cappuccino views if a menu is outside the editor frame. This will be looked into. TinyMCE dialogs had this issue too before, but this is handled now in the TinyMCEView code.
 
+## Demo
+
+There will be a Demo application soon. And the demo project will be added to my projects here on GitHub.
+
 ## Todo
 
 There is lots of room for improvments and fixes. It would be nice to have bindings working and also some theme improvments more like Aristo2. Configuration may also be easier to do with no subclassing. Please give feedback on how you are using the view.
 
+
+Enjoy
 Kerusan
