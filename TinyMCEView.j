@@ -38,8 +38,6 @@ var TinyMCEditorManager,
 
 + (void)initialize
 {
-    //CPLog.trace(_cmd + " " + [self class] +  " ");
-
     [TinyMCEView swizzleDialogClose];
 }
 
@@ -69,8 +67,6 @@ var TinyMCEditorManager,
 
     var newCloseFunction = function()
     {
-        //CPLog.trace("Hijacked closed " + TinyMCEViewInstance);
-
         // Here we enable the Cappuccino eventhandling
         [[TinyMCEViewInstance window] setIgnoresMouseEvents:NO];
 
@@ -94,8 +90,6 @@ var TinyMCEditorManager,
     {
         var returnValue = oldOpenFunction.apply(this, arguments);
 
-        //CPLog.trace("Hijacked open " + TinyMCEViewInstance);
-
         // Here we disable the Cappuccino eventhandling
         [[TinyMCEViewInstance window] setIgnoresMouseEvents:YES];
 
@@ -112,7 +106,6 @@ var TinyMCEditorManager,
 {
     self = [super initWithFrame:frame];
 
-    //CPLog.trace(_cmd + " " + [self class]);
     if (self)
     {
         // Set the instance variables
@@ -149,8 +142,6 @@ var TinyMCEditorManager,
  */
 - (void)doSetupWithDiv
 {
-    //CPLog.trace(_cmd + " " + [self class] +  " ");
-
     _isEditorReady = NO;
 
     // Create and configure the editor instance
@@ -170,8 +161,6 @@ var TinyMCEditorManager,
  */
 - (JSObject)editorConfigurationWithElement:(JSObject)anElement
 {
-    //CPLog.trace(_cmd + " " + [self class]);
-
     return {
     setup:
         function(anEditor)
@@ -217,31 +206,16 @@ var TinyMCEditorManager,
 // This method concludes the setup. It waits for the editor manager to fullfill the isEditorReady creation
 - (void)concludeSetup
 {
-    //CPLog.trace(_cmd + " " + [self class]);
-
     if ([self editor] == nil)
     {
         CPLog.warn(@"Can not find editor instance");
         return;
     }
 
-    [self editor].on('focus', function(e) {
-        //console.log("focus " + e.blurredEditor);
-    });
-
-    [self editor].on('blur', function(e) {
-        //console.log("blur " + e.focusedEditor);
-    });
-
     [self editor].on('click', function(e) {
-        //console.log("click " + e.focusedEditor);
         [[self window] makeFirstResponder:self];
     });
 
-    // TODO: Check this out what to use
-    // 1)[self performSelector:@selector(layoutSubviews) withObject:nil afterDelay:0.0];
-    // 2)[self _pumpRunLoop];
-    // 3)
     [self layoutSubviews];
 
     _isEditorReady = YES;
@@ -261,7 +235,6 @@ var TinyMCEditorManager,
 
 - (@action)clearText:(id)sender
 {
-    //CPLog.trace(_cmd + " " + [self class]);
     [self setHtmlValue:""];
     [self _didChange];
     [self _didPerformAction];
@@ -276,63 +249,54 @@ var TinyMCEditorManager,
 
 - (@action)boldSelection:(id)sender
 {
-    //CPLog.trace(_cmd + " " + [self class]);
     editor.execCommand(editor.Command.BOLD, null);
     [self _didPerformAction];
 }
 
 - (@action)underlineSelection:(id)sender
 {
-    //CPLog.trace(_cmd + " " + [self class]);
     editor.execCommand(editor.Command.UNDERLINE, null);
     [self _didPerformAction];
 }
 
 - (@action)italicSelection:(id)sender
 {
-    //CPLog.trace(_cmd + " " + [self class]);
     editor.execCommand(editor.Command.ITALIC, null);
     [self _didPerformAction];
 }
 
 - (@action)strikethroughSelection:(id)sender
 {
-    //CPLog.trace(_cmd + " " + [self class]);
     editor.execCommand(editor.Command.STRIKE_THROUGH, null);
     [self _didPerformAction];
 }
 
 - (@action)alignSelectionLeft:(id)sender
 {
-    //CPLog.trace(_cmd + " " + [self class]);
     editor.execCommand(editor.Command.JUSTIFY_LEFT, null);
     [self _didPerformAction];
 }
 
 - (@action)alignSelectionRight:(id)sender
 {
-    //CPLog.trace(_cmd + " " + [self class]);
     editor.execCommand(editor.Command.JUSTIFY_RIGHT, null);
     [self _didPerformAction];
 }
 
 - (@action)alignSelectionCenter:(id)sender
 {
-    //CPLog.trace(_cmd + " " + [self class]);
     editor.execCommand(editor.Command.JUSTIFY_CENTER, null);
     [self _didPerformAction];
 }
 
 - (@action)alignSelectionFull:(id)sender
 {
-    //CPLog.trace(_cmd + " " + [self class]);
     editor.execCommand(editor.Command.JUSTIFY_FULL, null);
     [self _didPerformAction];
 }
 
 - (@action)linkSelection:(id)sender
 {
-    //CPLog.trace(_cmd + " " + [self class]);
     // TODO Show a sheet asking for a URL to link to.
     editor.execCommand(editor.Command.LINK, "_self");
     [self _didPerformAction];
@@ -340,140 +304,120 @@ var TinyMCEditorManager,
 
 - (@action)insertOrderedList:(id)sender
 {
-    //CPLog.trace(_cmd + " " + [self class]);
     editor.execCommand(editor.Command.ORDERED_LIST, null);
     [self _didPerformAction];
 }
 
 - (@action)insertUnorderedList:(id)sender
 {
-    //CPLog.trace(_cmd + " " + [self class]);
     editor.execCommand(editor.Command.UNORDERED_LIST, null);
     [self _didPerformAction];
 }
 
 - (@action)bold:(id)sender
 {
-    //CPLog.trace(_cmd + " " + [self class]);
     [self editor].execCommand('bold',false,null);
     [self _didPerformAction];
 }
 
 - (@action)underline:(id)sender
 {
-    //CPLog.trace(_cmd + " " + [self class]);
     [self editor].execCommand('underline',false,null);
     [self _didPerformAction];
 }
 
 - (@action)italic:(id)sender
 {
-    //CPLog.trace(_cmd + " " + [self class]);
     [self editor].execCommand('italic',false,null);
     [self _didPerformAction];
 }
 
 - (@action)strikethrough:(id)sender
 {
-    //CPLog.trace(_cmd + " " + [self class]);
     [self editor].execCommand('strikethrough',false,null);
     [self _didPerformAction];
 }
 
 - (@action)alignLeft:(id)sender
 {
-    //CPLog.trace(_cmd + " " + [self class]);
     [self editor].execCommand('justifyleft',false,null);
     [self _didPerformAction];
 }
 
 - (@action)alignRight:(id)sender
 {
-    //CPLog.trace(_cmd + " " + [self class]);
     [self editor].execCommand('justifyright',false,null);
     [self _didPerformAction];
 }
 
 - (@action)alignCenter:(id)sender
 {
-    //CPLog.trace(_cmd + " " + [self class]);
     [self editor].execCommand('justifycenter',false,null);
     [self _didPerformAction];
 }
 
 - (@action)alignFull:(id)sender
 {
-    //CPLog.trace(_cmd + " " + [self class]);
     [self editor].execCommand('justifyfull',false,null);
     [self _didPerformAction];
 }
 
 - (@action)header1:(id)sender
 {
-    //CPLog.trace(_cmd + " " + [self class]);
     [self editor].execCommand('formatblock',false,'h1');
     [self _didPerformAction];
 }
 
 - (@action)header2:(id)sender
 {
-    //CPLog.trace(_cmd + " " + [self class]);
     [self editor].execCommand('formatblock',false,'h1');
     [self _didPerformAction];
 }
 
 - (@action)header3:(id)sender
 {
-    //CPLog.trace(_cmd + " " + [self class]);
     [self editor].execCommand('formatblock',false,'h1');
     [self _didPerformAction];
 }
 
 - (@action)header4:(id)sender
 {
-    //CPLog.trace(_cmd + " " + [self class]);
     [self editor].execCommand('formatblock',false,'h1');
     [self _didPerformAction];
 }
 
 - (@action)header5:(id)sender
 {
-    //CPLog.trace(_cmd + " " + [self class]);
     [self editor].execCommand('formatblock',false,'h1');
     [self _didPerformAction];
 }
 
 - (@action)header6:(id)sender
 {
-    //CPLog.trace(_cmd + " " + [self class]);
     [self editor].execCommand('formatblock',false,'h1');
     [self _didPerformAction];
 }
 
 - (void)header:(CPString)header
 {
-    //CPLog.trace(_cmd + " " + [self class]);
     [self editor].execCommand('formatblock',false,header);
     [self _didPerformAction];
 }
 
 - (void)superscript:(CPString)header
 {
-    //CPLog.trace(_cmd + " " + [self class]);
     [self editor].execCommand('superscript',false,null);
     [self _didPerformAction];
 }
 
 - (void)subscript:(CPString)header
 {
-    //CPLog.trace(_cmd + " " + [self class]);
     [self editor].execCommand('subscript',false,null);
     [self _didPerformAction];
 }
 
 - (@action)removeFormat:(id)sender
 {
-    //CPLog.trace(_cmd + " " + [self class]);
     [self editor].execCommand('removeFormat');
     [self _didPerformAction];
 }
@@ -488,14 +432,12 @@ var TinyMCEditorManager,
 
 - (BOOL)becomeFirstResponder
 {
-    //CPLog.trace(_cmd + " " + [self class]);
     [self _didBeginEditing];
     var theEditor = [self editor];
     if (theEditor != nil)
     {
         if (_cursorPlaced)
         {
-            //CPLog.trace(@"Become focus " + theEditor);
             theEditor.focus();
         }
         else
@@ -505,7 +447,6 @@ var TinyMCEditorManager,
         }
     }
 
-    //[self performSelector:@selector(layoutSubviews) withObject:nil afterDelay:0.8];
     [self _pumpRunLoop];
 
     return YES;
@@ -513,7 +454,6 @@ var TinyMCEditorManager,
 
 - (BOOL)resignFirstResponder
 {
-    //CPLog.trace(_cmd + " " + [self class]);
     var win = [self window];
 
     if (win == nil)
@@ -527,7 +467,6 @@ var TinyMCEditorManager,
 
 - (BOOL)tryToBecomeFirstResponder
 {
-    //CPLog.trace(_cmd + " " + [self class]);
     if (_isTryingToBecomeFirstResponder)
         return YES;
 
@@ -582,7 +521,6 @@ var TinyMCEditorManager,
         editor = ed;
 
     var theEditor = [self isHiddenOrHasHiddenAncestor] ? nil : editor;
-    //CPLog.trace(_cmd + " " + [self class] + " " + theEditor);
 
     return theEditor;
 }
@@ -637,35 +575,6 @@ var TinyMCEditorManager,
         // before it gets displayed.
 
         [self performSelector:@selector(doSetupWithDiv) withObject:nil afterDelay:0.0];
-        //[self doSetupWithDiv];
-    }
-}
-
-- (void)viewWillMoveToWindow:(CPWindow)newWindow
-{
-    [super viewWillMoveToWindow:newWindow];
-
-    if (_window)
-    {
-        //CPLog.trace(@"View did move to window");
-    }
-    else
-    {
-        //CPLog.trace(@"View did move from window");
-    }
-}
-
-- (void)viewDidMoveToWindow
-{
-    [super viewDidMoveToWindow];
-
-    if (_window)
-    {
-        //CPLog.trace(@"View did move to window");
-    }
-    else
-    {
-        //CPLog.trace(@"View did move from window");
     }
 }
 
@@ -713,8 +622,6 @@ var TinyMCEditorManager,
 {
     if ([self editor])
     {
-        //CPLog.trace(_cmd + " " + [self class] + " " + [self editor].id);
-
         [self editor].focus();
         var isEnabled = ![self editor].isHidden();
         if (!isEnabled && enabled)
@@ -757,15 +664,12 @@ var TinyMCEditorManager,
  */
 - (CPString)htmlValue
 {
-    //CPLog.trace(_cmd + " " + [self class]);
     var theEditor = [self editor];
 
     if (!theEditor)
         return _html;
 
     var content = theEditor.getContent();
-
-    //CPLog.trace(_cmd + " " + [self class] + " :" + content);
 
     return content;
 }
@@ -775,8 +679,6 @@ var TinyMCEditorManager,
  */
 - (void)setHtmlValue:(CPString)html
 {
-    //CPLog.trace(_cmd + " " + [self class]);
-
     var theEditor = [self editor];
 
     if (theEditor != nil && _isEditorReady)
@@ -799,16 +701,12 @@ var TinyMCEditorManager,
  */
 - (CPString)stringValue
 {
-    //CPLog.trace(_cmd + " " + [self class]);
-
     var theEditor = [self editor];
 
     if (!theEditor)
         return _innerText;
 
     var content = theEditor.contentDocument.activeElement.innerText;
-
-    //CPLog.trace(_cmd + " " + [self class] + " :" + content);
 
     return content;
 }
@@ -819,7 +717,6 @@ var TinyMCEditorManager,
 
 - (void)_didChange
 {
-    //CPLog.trace(_cmd + " " + [self class]);
     // When the text changes, the height of the content may change.
     if ([delegate respondsToSelector:@selector(editorViewDidChange:)])
         [delegate editorViewDidChange:self];
@@ -827,14 +724,12 @@ var TinyMCEditorManager,
 
 - (void)_didBeginEditing
 {
-    //CPLog.trace(_cmd + " " + [self class]);
     if ([delegate respondsToSelector:@selector(editorViewDidBeginEditing:)])
         [delegate editorViewDidBeginEditing:self];
 }
 
 - (void)_didEndEditing
 {
-    //CPLog.trace(_cmd + " " + [self class]);
     if ([delegate respondsToSelector:@selector(editorViewDidEndEditing:)])
         [delegate editorViewDidEndEditing:self];
 }
@@ -844,11 +739,9 @@ var TinyMCEditorManager,
 
 - (void)layoutSubviews
 {
-    //CPLog.trace(_cmd + " " + [self class]);
     [super layoutSubviews];
 
     var theEditor = [self editor];
-    //CPLog.trace(@"layoutSubviews editor" + theEditor);
 
     try {
         if (theEditor)
@@ -864,12 +757,11 @@ var TinyMCEditorManager,
         }
     }
     catch (exception) {
-        //CPLog.trace(_cmd + " " + [self class] + @" Can not resize");
         var frameWidth = [self frame].size.width,
             frameHeight = [self frame].size.height,
             offset = [self subcomponentsOffset];
 
-        CPLog.warn(_cmd + " " + [self class] + @" frameWidth " + frameWidth + @" frameHeight " + frameHeight + @" offset " + offset);
+        CPLog.warn(_cmd + " " + [self class] + @"Can not resize - frameWidth " + frameWidth + @" frameHeight " + frameHeight + @" offset " + offset);
     }
 }
 
@@ -905,31 +797,26 @@ var TinyMCEditorManager,
 // TODO: Check this out if needed
 - (void)mouseDown:(CPEvent)anEvent
 {
-    //CPLog.trace(_cmd + " " + [self class]);
     [[[anEvent window] platformWindow] _propagateCurrentDOMEvent:YES];
 }
 
 - (void)mouseUp:(CPEvent)anEvent
 {
-    //CPLog.trace(_cmd + " " + [self class]);
     [[[anEvent window] platformWindow] _propagateCurrentDOMEvent:YES];
 }
 
 - (void)mouseDragged:(CPEvent)anEvent
 {
-    //CPLog.trace(_cmd + " " + [self class]);
     [[[anEvent window] platformWindow] _propagateCurrentDOMEvent:YES];
 }
 
 - (void)keyDown:(CPEvent)anEvent
 {
-    //CPLog.trace(_cmd + " " + [self class]);
     [[[anEvent window] platformWindow] _propagateCurrentDOMEvent:YES];
 }
 
 - (void)keyUp:(CPEvent)anEvent
 {
-    //CPLog.trace(_cmd + " " + [self class]);
     [[[anEvent window] platformWindow] _propagateCurrentDOMEvent:YES];
 }
 
@@ -957,8 +844,6 @@ var TinyMCEditorManager,
 
 - (void)_didPerformAction
 {
-    //CPLog.trace(_cmd + " " + [self class]);
-
     if (shouldFocusAfterAction)
     {
         var win = [self window];
