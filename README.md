@@ -5,12 +5,11 @@ A framework for [Cappuccino](http://cappuccino-project.org) that encapsulates th
 ## Getting started
 
 To get the framework just do:
-    `git clone https://github.com/kerusan/TinyMCEView.git
-    `
+    git clone https://github.com/kerusan/TinyMCEView.git
 
 Now you have a local copy.
 
-Then to build it you have to have a working Cappuccino installation.
+Then to build it you have to have a working Cappuccino installation. When you have that do:
 
     cd TinyMCEView
     jake install
@@ -28,7 +27,7 @@ To make a Test application with Xcode do:
 
 Now you have a Xcode project with the framework added so it is easy to instantiate a TinyMCEView inside a window.
 
-Since tinymce is an external javascript lib it has to be loaded from the index.html or index-debug.html files. So include these lines in index.html
+Since TinyMCE is an external javascript lib it has to be loaded from the index.html or index-debug.html files. So include these lines in index.html
 
     <script type="text/javascript"
     src="Frameworks/TinyMCEView/Resources/tinymce.min.js"
