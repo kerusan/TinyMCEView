@@ -5,6 +5,7 @@ A framework for [Cappuccino](http://cappuccino-project.org) that encapsulates th
 ## Getting started
 
 To get the framework just do:
+
     git clone https://github.com/kerusan/TinyMCEView.git
 
 Now you have a local copy.
