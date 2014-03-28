@@ -22,7 +22,9 @@ To make a Test application with Xcode do:
     capp gen -t NIBApplication -l -F TinyMCEView Test
     cd Test
     mkdir Frameworks/Source
-    ln -s ../TinyMCEView Frameworks/Source/
+    cd Frameworks/Source
+    ln -s ../../../TinyMCEView .
+    cd ../..
     xcc .
 
 Now you have a Xcode project with the framework added so it is easy to instantiate a TinyMCEView inside a window.
@@ -40,6 +42,22 @@ and this in the index-debug.html
     src="Frameworks/Debug/TinyMCEView/Resources/tinymce.full.js"
     charset="UTF-8">
     </script>
+
+Now it is time for puting a TinyMCEView into the XIB file, and don't forget to add:
+
+    #import <TinyMCEView/TinyMCEView.j>
+    
+in the begining of AppController.j
+
+Test it with
+
+    python -m "SimpleHTTPServer"
+    
+and the URL
+
+    http://localhost:8000/index-debug.html
+    
+
 
 ## Features
 
