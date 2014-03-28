@@ -12,30 +12,40 @@ Now you have a local copy.
 
 Then to build it you have to have a working Cappuccino installation.
 
-    `cd TinyMCEView
-
+`
+    cd TinyMCEView
     jake install
-
     cd ..
-    `
+`
 
 This will install it into you $CAPP_BUILD dir:
 
 To make a Test application with Xcode do:
 
-    `capp gen -t NIBApplication -l -F TinyMCEView Test
+`
+    capp gen -t NIBApplication -l -F TinyMCEView Test
     cd Test
     mkdir Frameworks/Source
     ln -s ../TinyMCEView Frameworks/Source/
     xcc .
-    `
+`
 
 Now you have a Xcode project with the framework added so it is easy to instantiate a TinyMCEView inside a window.
 
 Since tinymce is an external javascript lib it has to be loaded from the index.html or index-debug.html files. So include these lines in index.html
-		`<script type="text/javascript" src="Frameworks/TinyMCEView/Resources/tinymce.min.js" charset="UTF-8"></script>`
+`
+    <script type="text/javascript"
+        src="Frameworks/TinyMCEView/Resources/tinymce.min.js"
+        charset="UTF-8">
+    </script>
+`
 and this in the index-debug.html
-		`<script type="text/javascript" src="Frameworks/Debug/TinyMCEView/Resources/tinymce.full.js" charset="UTF-8"></script>`
+`
+    <script type="text/javascript" 
+        src="Frameworks/Debug/TinyMCEView/Resources/tinymce.full.js" 
+        charset="UTF-8">
+    </script>
+`
 
 ## Features
 
@@ -56,11 +66,15 @@ Since TinyMCE is LGPL 2.1 I assume this code can have another license and theref
 There is right now an issue that makes the mouseclick in the TinyMCE menu pass through to the underlying Cappuccino views if a menu is outside the editor frame. This will be looked into. TinyMCE dialogs had this issue too before, but this is handled now in the TinyMCEView code.
 The editor is a bit sensitive to being displayed in different windows/views so if you switch out the view or close a window it is displayed in do a
 
-    `[myEditorView setHidden:YES]`
+`
+    [myEditorView setHidden:YES]
+`
 
     before you do it and then 
 
-    `[myEditorView setHidden:NO]`
+`
+    [myEditorView setHidden:NO]
+`
 
     when you want to show it again.
 
