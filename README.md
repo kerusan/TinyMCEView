@@ -46,7 +46,7 @@ and this in the index-debug.html
 
 Now it is time for puting a TinyMCEView into the XIB file, and don't forget to add:
 
-    #import <TinyMCEView/TinyMCEView.j>
+    @import <TinyMCEView/TinyMCEView.j>
     
 in the begining of AppController.j
 
@@ -64,6 +64,8 @@ and the URL
 
 This Cappuccino control tries to implement as many of the TinyMCE features as possible. It is a CPView subclass and it tries to act as a well behaved Cappuccino control as far as it is possible. But since TinyMCE has an eventhandling of its own, some half nasty hacks have been made so the two event loops can reside side by side.
 
+The editor will respond to view resizing and change size automatic.
+
 The setup, if default configuration does not fit, is now done in a method called `editorConfigurationWithElement:`. Subclass TinyMCEView and overide this method for a different configuration.
 
 ## Version
@@ -79,15 +81,11 @@ Since TinyMCE is LGPL 2.1 I assume this code can have another license and theref
 There is right now an issue that makes the mouseclick in the TinyMCE menu pass through to the underlying Cappuccino views if a menu is outside the editor frame. This will be looked into. TinyMCE dialogs had this issue too before, but this is handled now in the TinyMCEView code.
 The editor is a bit sensitive to being displayed in different windows/views so if you switch out the view or close a window it is displayed in do a
 
-
-    [myEditorView setHidden:YES]
-
+    [myEditorView setHidden:YES];
 
 before you do it and then
 
-
-    [myEditorView setHidden:NO]
-
+    [myEditorView setHidden:NO];
 
 when you want to show it again.
 
