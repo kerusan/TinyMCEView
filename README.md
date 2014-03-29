@@ -91,7 +91,7 @@ when you want to show it again.
 
 ## Demo
 
-There will be a Demo application soon. And the demo project will be added to my projects here on GitHub.
+There is a Demo application [here](http://www.kerusan.org/Cappuccino/resources/TestMCE/Test/index-debug.html). And the demo project will be added to my projects here on GitHub.
 
 ## Todo
 
