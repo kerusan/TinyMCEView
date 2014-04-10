@@ -1,4 +1,4 @@
-#TinyMCEView framework - DO NOT USE - NOT READY YET
+#TinyMCEView framework
 
 A framework for [Cappuccino](http://cappuccino-project.org) that encapsulates the javascript HTML editor [TinyMCE](http://www.tinymce.com). It is right now a quick hack just to get it working but I hope it can evolve further on. It is a HTML editor and should not be thought of as a replacement to either CPTextView or any other multiline textview even if it can be used as such. I have earlier used and still do use [WKTextField](https://github.com/wireload/WKTextView) for some things, but the TinyMCE editor is a more complete HTML editor than Google's Closure Lib editor and I needed the extra features TinyMCE bring and I did not have time to implement them myself in the Closure lib.
 
