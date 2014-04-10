@@ -750,7 +750,6 @@ var TinyMCEditorManager,
                 frameHeight = [self frame].size.height,
                 offset = [self subcomponentsOffset];
 
-            //CPLog.trace(_cmd + " " + [self class] + @" offset " + offset);
             theEditor.theme.resizeTo(frameWidth - 3, frameHeight - offset - 3);
         }
     }
