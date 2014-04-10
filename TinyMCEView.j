@@ -125,10 +125,8 @@ var TinyMCEditorManager,
         _divTag.id = [self _editorId];
         _divTag.className = [self _divTagClassName];
 
-#if PLATFORM(DOM)
         // Add the div to this views div element
-        _DOMElement.appendChild(_divTag);
-#endif
+        self._DOMElement.appendChild(_divTag);
     }
 
     return self;
