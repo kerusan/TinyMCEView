@@ -79,6 +79,7 @@ Since TinyMCE is LGPL 2.1 I assume this code can have another license and theref
 ## Known bugs and caveats
 
 There is right now an issue that makes the mouseclick in the TinyMCE menu pass through to the underlying Cappuccino views if a menu is outside the editor frame. This will be looked into. TinyMCE dialogs had this issue too before, but this is handled now in the TinyMCEView code.
+
 The editor is a bit sensitive to being displayed in different windows/views so if you switch out the view or close a window it is displayed in do a
 
     [myEditorView setHidden:YES];
