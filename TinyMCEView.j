@@ -556,10 +556,13 @@ var TinyMCEditorManager,
             tinyMCEManager = [TinyMCEView TinyMCEditorManager],
             theEditor = [self editor];
 
-        _html = theEditor.getContent();
-        _innerText = theEditor.contentDocument.activeElement.innerText;
-        tinyMCEManager.remove([self editor]);
-        editor = nil;
+        if (theEditor)
+        {
+            _html = theEditor.getContent();
+            _innerText = theEditor.contentDocument.activeElement.innerText;
+            tinyMCEManager.remove([self editor]);
+            editor = nil;
+        }
         _isEditorReady = NO;
 
         [super setHidden:shouldBeHidden];
