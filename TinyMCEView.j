@@ -21,9 +21,9 @@ var TinyMCEditorManager,
 
     BOOL            shouldFocusAfterAction;
 
-    BOOL         _cursorPlaced;
-    BOOL         _isTryingToBecomeFirstResponder;
-    BOOL         _isEditorReady;
+    BOOL            _cursorPlaced;
+    BOOL            _isTryingToBecomeFirstResponder;
+    BOOL            _isEditorReady;
 
     CPString        _html;
     CPString        _innerText;
@@ -65,10 +65,14 @@ var TinyMCEditorManager,
 
     var oldCloseFunction = tinyMCE.ui.Window.prototype.close;
 
+
     var newCloseFunction = function()
     {
         // Here we enable the Cappuccino eventhandling
         [[TinyMCEViewInstance window] setIgnoresMouseEvents:NO];
+
+        // Here we enable the Cappuccino copy and paste when the SourceCode window is closed
+        [CPPlatformWindow primaryPlatformWindow]._platformPasteboard.supportsNativeCopyAndPaste = YES;
 
         return oldCloseFunction.apply(this, arguments);
     }
@@ -92,6 +96,9 @@ var TinyMCEditorManager,
 
         // Here we disable the Cappuccino eventhandling
         [[TinyMCEViewInstance window] setIgnoresMouseEvents:YES];
+
+        // Here we disable the Cappuccino copy and paste when the SourceCode window is open
+        [CPPlatformWindow primaryPlatformWindow]._platformPasteboard.supportsNativeCopyAndPaste = NO;
 
         return returnValue;
     }
