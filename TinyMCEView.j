@@ -21,9 +21,9 @@ var TinyMCEditorManager,
 
     BOOL            shouldFocusAfterAction;
 
-    boolean         _cursorPlaced;
-    boolean         _isTryingToBecomeFirstResponder;
-    boolean         _isEditorReady;
+    BOOL         _cursorPlaced;
+    BOOL         _isTryingToBecomeFirstResponder;
+    BOOL         _isEditorReady;
 
     CPString        _html;
     CPString        _innerText;
