@@ -10,31 +10,31 @@
 	<string>TinyMCEView.framework</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>51B90A50-E7A6-4AC2-B4C3-59B6A985B56A</key>
-		<string>ssh://boplats-dev-srv01.pin.se/Library/Repository/office</string>
+		<key>5D76253152F6DFB9C8568EB0BCA1C301655C798B</key>
+		<string>https://github.com/kerusan/TinyMCEView.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Frameworks/TinyMCEView.framework/TinyMCEView.framework.xcodeproj/project.xcworkspace</string>
+	<string>TinyMCEView.framework.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>51B90A50-E7A6-4AC2-B4C3-59B6A985B56A</key>
-		<string>../../../..</string>
+		<key>5D76253152F6DFB9C8568EB0BCA1C301655C798B</key>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://boplats-dev-srv01.pin.se/Library/Repository/office</string>
+	<string>https://github.com/kerusan/TinyMCEView.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>51B90A50-E7A6-4AC2-B4C3-59B6A985B56A</string>
+	<string>5D76253152F6DFB9C8568EB0BCA1C301655C798B</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>51B90A50-E7A6-4AC2-B4C3-59B6A985B56A</string>
+			<string>5D76253152F6DFB9C8568EB0BCA1C301655C798B</string>
 			<key>IDESourceControlWCCName</key>
-			<string>office</string>
+			<string>TinyMCEView</string>
 		</dict>
 	</array>
 </dict>
