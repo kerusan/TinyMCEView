@@ -54,8 +54,6 @@ var TinyMCEditorManager,
 // Mouse events gets propagated through to the underlying Cappucino controls when click is happening
 // outside of the TinyMCE view and we have to prevent this from happening since unwanted event might
 // occur. We do this by swizzle the functions 'open' and 'close' window in TinyMCE.
-// One problem still exist in this version and that is menus, if they displays outside of the TinyMCE
-// editor frame the mouse clicks propagates through to the underlying Cappuccino view.
 
 + (void)swizzleDialogClose
 {
